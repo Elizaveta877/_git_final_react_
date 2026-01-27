@@ -3,13 +3,19 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchProducts } from '../features/products/productsOperations'
 import { selectProducts, selectLoading, selectError } from '../features/products/productSlice'
 import ProductCard from '../components/ProductCard'
+import { selectProducts, selectSearchQuery } from '../features/products/productSlice'
 
 
 function ProductList() {
   const dispatch = useDispatch()
   const products = useSelector(selectProducts)
+  const searchQuery = useSelector(selectSearchQuery)
   const loading = useSelector(selectLoading)
   const error = useSelector(selectError)
+  const filteredProducts = products.filter(product =>
+    product.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
 
   useEffect(() => {
     dispatch(fetchProducts())
@@ -30,6 +36,15 @@ function ProductList() {
           <ProductCard key={product.id} product={product} />
         ))}
       </main>
+
+      <div className='product-grid'>
+        {filteredProducts.map(product => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+        {filteredProducts.length === 0 && !loading && (
+          <p>Товари не знайдені за вашим запитом.</p>
+        )}
+      </div>
     </div>
   )
   };

@@ -7,8 +7,13 @@ const productsSlice = createSlice({
     items: [],
     loading: false,
     error: null,
+     searchQuery: "",
   },
-  reducers: {},
+  reducers: {
+    setSearchQuery: (state, action) => {
+      state.searchQuery = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchProducts.pending, (state) => {
