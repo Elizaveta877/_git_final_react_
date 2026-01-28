@@ -7,7 +7,7 @@ const productsSlice = createSlice({
     items: [],
     loading: false,
     error: null,
-     searchQuery: "",
+    searchQuery: "", 
   },
   reducers: {
     setSearchQuery: (state, action) => {
@@ -30,8 +30,13 @@ const productsSlice = createSlice({
   },
 });
 
+
+export const { setSearchQuery } = productsSlice.actions;
+
+
 export const selectProducts = (state) => state.products.items;
 export const selectLoading = (state) => state.products.loading;
 export const selectError = (state) => state.products.error;
+export const selectSearchQuery = (state) => state.products.searchQuery;
 
 export default productsSlice.reducer;

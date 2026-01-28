@@ -1,5 +1,4 @@
 import { useSelector, useDispatch } from "react-redux";
-// Додаємо clearCart в імпорт
 import { selectCartItems, selectCartTotal, removeFromCart, addToCart, clearCart } from "../features/cart/cartSlice";
 import { toast } from 'react-toastify';
 
@@ -9,7 +8,7 @@ const CartPage = () => {
   const total = useSelector(selectCartTotal); 
 
   const handleCheckout = () => {
-    // Виправляємо назву на clearCart
+
     dispatch(clearCart());
     toast.info('Замовлення оформлено! Дякуємо за покупку!', {
       position: "top-center",

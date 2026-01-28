@@ -5,10 +5,11 @@ export const fetchProducts = createAsyncThunk(
   "products/fetchAll",
   async (_, thunkAPI) => {
     try {
-      const response = await axios.get('https://fakestoreapi.com/products');
+      const response = await axios.get("https://fakestoreapi.com/products");
+
       return response.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.response.data);
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
     }
   }
 );

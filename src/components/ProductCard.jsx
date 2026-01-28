@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart,selectCartItems } from "../features/cart/cartSlice";
+import { addToCart, selectCartItems } from "../features/cart/cartSlice";
 import { toast } from 'react-toastify'; 
 
 
@@ -16,7 +16,6 @@ const ProductCard = ({ product }) => {
     dispatch(addToCart(product));
     
   };
-
 
 
   return (
