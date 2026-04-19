@@ -1,22 +1,10 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #1d1313;
 }
 
-/* .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa); */
-/* } */
 
 @keyframes logo-spin {
   from {
@@ -44,6 +32,7 @@
 
 /* Додай це до своїх стилів */
 .app-container {
+  
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
@@ -147,9 +136,9 @@ header {
   background: conic-gradient(
     from 60deg at 50% 50%,
     transparent 0deg,
-    #4d3fd0 15deg,
+    #682828 15deg,
     transparent 145deg,
-    #e830ba 215deg,
+    #ccc9cb 215deg,
     transparent 325deg
   );
   animation: spin-effect 4s linear infinite;
@@ -181,4 +170,122 @@ header {
 @keyframes spin-effect {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+/* home-page */
+
+.home-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+   background-color: #1d1313;
+   margin: 0;
+    padding: 0;
+  
+}
+
+.hero-content {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.welcome-title {
+  /* font-size: 100px; 
+  font-weight: 900;
+  letter-spacing: 15px; 
+  margin: 0;
+  text-transform: uppercase; */
+  margin: 0;
+  line-height: 1;
+}
+
+.yelyzaveta-glow {
+  color: #fff;
+  
+  text-shadow: 
+    0 0 10px #fff,
+    0 0 20px #712f3a, 
+    0 0 40px #994646,
+    0 0 80px #9d7793;
+  animation: glow-pulse 3s infinite alternate;
+}
+
+.hero-subtitle {
+  /* font-size: 18px;
+  color: #888;
+  letter-spacing: 5px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  opacity: 0.8; */
+  margin-top: 25px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+
+@keyframes glow-pulse {
+  from {
+    text-shadow: 
+      0 0 10px #fff,
+      0 0 20px #4d3fd0, 
+      0 0 40px #e830ba;
+    transform: scale(1);
+  }
+  to {
+    text-shadow: 
+      0 0 20px #fff,
+      0 0 40px #4d3fd0, 
+      0 0 60px #e830ba,
+      0 0 100px #e830ba;
+    transform: scale(1.02);
+  }
+}
+/* header */
+.top-header {
+  width: 100%;
+  position: absolute;
+  background-color: transparent;
+  padding: 40px 0;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.top-container {
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 0 60px;
+}
+
+.menu-links {
+  grid-column: 2;
+  display: flex;
+  gap: 60px;
+}
+
+.menu-links a {
+  color: #888;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.menu-links a:hover {
+  color: #e830ba;
+}
+
+.top-auth {
+  grid-column: 3;
+  justify-self: end;
+  color: #888;
+  font-size: 14px;
+  letter-spacing: 2px;
 }

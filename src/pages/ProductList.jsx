@@ -12,9 +12,10 @@ function ProductList() {
   const searchQuery = useSelector(selectSearchQuery)
   const loading = useSelector(selectLoading)
   const error = useSelector(selectError)
+  const query = useSelector(selectSearchQuery)
 
   const filteredProducts = products.filter(product =>
-    product.title.toLowerCase().includes(searchQuery.toLowerCase())
+    product.title.toLowerCase().includes(query.toLowerCase())
   );
 
 
@@ -27,8 +28,19 @@ function ProductList() {
     <div className="app-container">
       <header>
         <h1>Наш інтернет-магазин</h1>
+             <div className="search-wrapper">
+          <input
+            className='search-bar'
+            type="text"
+            placeholder="Пошук речей..."
+            value={query}
+            onChange={(e) => dispatch(setSearchQuery(e.target.value))}
+          />
+        </div>
       </header>
       
+   
+
       {loading && <div className='loader'>Завантаження товарів...</div>}
       {error && <div className='error'>Виникла помилка: {error}</div>}
       
