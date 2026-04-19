@@ -1,16 +1,26 @@
-# React + Vite
+ ## Розробка інтернет магазину
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ це сучасний інтернет-магазин  вбрання розроблений на React з використанням Redux Toolkit для керування станом. Проєкт демонструє навички роботи з асинхронними запитами, складними анімаціями та архітектурою сучасних вебдодатків.
 
-Currently, two official plugins are available:
+ Динамічне завантаження товарів: Використання createAsyncThunk для отримання даних із зовнішніх API (Fake Store API )
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Глобальний стан: Керування кошиком та каталогом товарів за допомогою Redux Slices.
 
-## React Compiler
+Пошук у реальному часі: Миттєва фільтрація товарів завдяки синхронізації стану пошуку зі стором.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Інтерактивний кошик: Додавання товарів, автоматичний підрахунок кількості та сповіщення через react-toastify.
+## 💻 Встановлення та запуск
+1. Клонуйте репозиторій
+2. Перейдіть у папку пректу
+3. Встановіть залежності:
 
-## Expanding the ESLint configuration
+npm install
+Запустіть проєкт у режимі розробки:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+npm run dev
+
+Після цього відкрийте http://localhost:5173 у вашому браузері.
+
+## 🔗 Посилання на демо:
+git-final-react.vercel.app
